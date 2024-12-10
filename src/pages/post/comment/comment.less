@@ -1,0 +1,163 @@
+.comment {
+    margin-top: 50px;
+    width: 1400px;
+    border: 1px solid #e5e5e5;
+    background-color: #fff;
+    border-radius: 20px;
+    color: #000;
+    padding: 40px 40px 40px 40px;
+    box-shadow: 0 4px 10px rgba(255, 107, 107, 0.5);
+}
+
+.sendcomment {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.commentAvatar {
+    margin-top: 5px;
+}
+
+.commentInput {
+    width: 1320px !important;
+    resize: none !important;
+    border: 0 !important;
+    padding: 10px !important;
+    font-family: PingFang SC !important;
+    min-height: 100px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    background: #fff !important;  /* 默认背景 */
+    transition: background 0.3s ease, border 0.3s ease, box-shadow 0.3s ease; /* 过渡动画 */
+
+    &:hover {
+        background: #f0f0f0 !important; /* 悬停时背景色变化 */
+    }
+
+    &:focus {
+        background: #fff !important;
+        border: #ff6b6b 1px solid !important; /* 聚焦时边框颜色变化 */
+        box-shadow: 0 0 8px rgba(255, 107, 107, 0.3); /* 聚焦时添加阴影 */
+    }
+}
+
+.commentbig {
+    text-align: center;
+    cursor:zoom-out;
+}
+
+
+/* 上传按钮的样式 */
+.uploadButton {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #666;
+    color: #fff;
+    border: 1px solid #ff6b6b;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 15px;
+    margin-top: 10px;
+    font-family: PingFang SC;
+    margin-right: 20px;
+    width: 100px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.uploadButton:hover {
+    background-color: #ff6b6b;
+}
+
+.imagecontainer {
+    position: relative;
+    display: inline-block;
+}
+
+.imagecontainer img {
+    transition: transform 0.3s;
+}
+
+.imagecontainer:hover img {
+    transform: scale(1.1); /* 放大效果 */
+}
+
+.error {
+    color: #c0392b;
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+.deleteicon {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+    color:  rgba(146,146,146,0.8);
+    font-size: 20px;
+
+    &:hover {
+        color: rgba(146,146,146,1);
+    }
+}
+
+.commentContent {
+    width: 1320px;
+    padding: 5px;
+    margin-left: 5px;
+}
+
+.commentName {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.commentText {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.commentTime {
+    font-size: 14px;
+    color: #999;
+    margin-right: 20px;
+}
+
+.commentReply{
+    margin-right: 20px;
+    cursor: pointer;
+
+    &:hover {
+        color: #ff6b6b;
+    }
+}
+
+.commentLike {
+    margin-right: 20px;
+    cursor: pointer;
+
+    &:hover {
+        color: #ff6b6b;
+    }
+}
+
+.commentfooter {
+    display: flex;
+    justify-content: space-between;
+    font-family: PingFang SC;
+    margin-bottom: 10px;
+}
+
+:global {
+    :focus-visible {
+        outline: 0 !important;
+    }
+
+    .ant-modal .ant-modal-content{
+        padding:20px 50px
+    }
+
+}

@@ -1,0 +1,60 @@
+.Page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'PingFang SC';
+  opacity: 0;
+  animation: fadeIn 1s forwards;  // 使用动画
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+.followhead {
+  width: 800px;
+  border: 1px solid #666;
+  padding: 20px 10px 10px 20px;
+  background-color: #666;
+  color: white;
+  border-radius: 20px 20px 0 0;
+}
+
+.followcontainer {
+  border: 5px solid #666;
+  width: 802px;
+  padding: 10px;
+  color: white;
+  display: flex;
+  background: #545454;
+}
+
+.followlistcontainer {
+  width: 520px;
+  min-height: 500px;
+  color: white;
+  height: 100%;
+  position: sticky;
+  top: 80px;
+}
+
+.followlistheader {
+  border: 1px solid #666;
+  padding: 20px 10px 10px 10px;
+  background: #666;
+  border-radius: 10px 10px 0 0;
+}
+
+.followlistcontent {
+  display: flex;
+  border: 5px solid #666;
+  padding: 10px;
+  justify-content: space-between;
+}
+
+

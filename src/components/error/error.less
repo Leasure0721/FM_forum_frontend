@@ -1,0 +1,55 @@
+/* error.less */
+.errorPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    font-family: 'PingFang SC';
+    opacity: 0;
+    animation: fadeIn 1s forwards;  // 使用动画
+  
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  }
+  
+  .errorContent {
+    text-align: center;
+    background-color: white;
+    border-radius: 8px;
+    padding: 40px;
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  .errorIcon {
+    margin-bottom: 20px;
+  }
+  
+  .errorMessage {
+    font-size: 28px;
+    color: #ff4d4f ;  /* 错误消息的颜色 */
+    margin-bottom: 10px;
+  }
+  
+  .errorDescription {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  .buttonContainer {
+    margin-top: 20px;
+  }
+
+  .bkhomebtn{
+    letter-spacing: 1px;
+    color: #fff;
+    font-family: PingFang SC;
+  }
+  

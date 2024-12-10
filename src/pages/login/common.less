@@ -1,0 +1,159 @@
+.Page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    font-family: 'PingFang SC';
+    opacity: 0;
+    animation: fadeIn 1s forwards;  // 使用动画
+  
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+}
+
+.Content {
+    text-align: center;
+    background-color: white;
+    border-radius: 8px;
+    padding: 40px;
+    max-width: 500px;
+    max-width: 500px;
+    width: 100%;
+    font-family: PingFang SC;
+}
+
+.bcklogin {
+  display: flex;
+  align-items: flex-start;
+  color: #000;
+  margin-top: -20px;
+  margin-left: -20px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.errorMessage {
+  height: 20px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-start;
+  font-size: 10px;
+  color: red;
+}
+
+.genderbtn {
+  margin-right: 10px;
+  border: 0;
+  background-color: rgba(0,0,0,0.04);
+  cursor: pointer;
+  color: #666;
+  font-size: 15px;
+  width: 40px;
+  border-radius: 5px;
+
+  &:hover {
+      background-color: rgba(0,0,0,0.06);
+  }
+
+  &:focus {
+      color: #fff;
+  }
+}
+
+.uploadcover {
+  color: #0000004f;
+  width: 120px;
+  height: 120px;
+  background: rgba(0,0,0,0.04);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 50%;
+  margin-left: 20px;
+  margin-right: 20px;
+  border: #ff6b6b solid 1px;
+
+  &:hover {
+    background-color: rgba(0,0,0,0.06);
+  }
+}
+
+
+
+:global{
+  .ant-input-affix-wrapper-focused, 
+  .ant-input-affix-wrapper:focus {
+    box-shadow: 0 0 0 1px rgb(255, 107, 107,0.2);
+  }
+
+  .ant-input-outlined:focus, 
+  .ant-input-outlined:focus-within{
+    box-shadow: 0 0 0 1px rgb(255, 107, 107,0.2);
+  } 
+
+  .ant-btn-variant-outlined:not(:disabled):not(.ant-btn-disabled):hover, 
+  .ant-btn-variant-dashed:not(:disabled):not(.ant-btn-disabled):hover {
+    color: #FF6B6B;
+    border-color: #FF6B6B;
+    background: #ffffff;
+  }
+
+  .ant-btn-variant-outlined:not(:disabled):not(.ant-btn-disabled):active, 
+  .ant-btn-variant-dashed:not(:disabled):not(.ant-btn-disabled):active {
+    color: #FF6B6B;
+    border-color: #FF6B6B;
+    background: #ffffff;
+  }
+
+  .ant-btn-variant-solid:not(:disabled):not(.ant-btn-disabled):active {
+    background: #FF6B6B;
+    color: #fff;
+  }
+
+  .ant-picker-outlined {
+    border: 1px solid #ff6b6b;
+}
+
+  .ant-picker-outlined:hover {
+      border: 1px solid #ff6b6b;
+  }
+
+  .ant-picker-outlined:focus, 
+  .ant-picker-outlined:focus-within {
+      border: 1px solid #ff6b6b;
+      box-shadow: 0 0 0 1px #ff6b6b;
+  }
+
+  .ant-picker-dropdown .ant-picker-cell-in-view.ant-picker-cell-selected:not(.ant-picker-cell-disabled) .ant-picker-cell-inner, 
+  .ant-picker-dropdown .ant-picker-cell-in-view.ant-picker-cell-range-start:not(.ant-picker-cell-disabled) .ant-picker-cell-inner, 
+  .ant-picker-dropdown .ant-picker-cell-in-view.ant-picker-cell-range-end:not(.ant-picker-cell-disabled) .ant-picker-cell-inner {
+      color: #fff;
+      background: #ff6b6b;
+  }
+
+  .ant-picker-dropdown .ant-picker-header-view >button:hover {
+      color: #ff6b6b;
+  }
+
+  .ant-picker-dropdown .ant-picker-cell-in-view.ant-picker-cell-today .ant-picker-cell-inner::before{
+      border: 1px solid #ff6b6b;
+  }
+
+  :where(.css-dev-only-do-not-override-1wwf28x).ant-picker-outlined:hover {
+      border-color: #ff6b6b;
+      background-color: #ffffff;
+  }
+
+  .ant-input-outlined:focus, 
+  .ant-input-outlined:focus-within {
+      box-shadow: 0 0 0 1px #ff6b6b;
+      border-color: #ff6b6b;
+  } 
+}

@@ -1,0 +1,245 @@
+  .header {
+    width: 100%;
+    display: flex;
+    border-bottom: #FF6B6B solid 2px;
+    padding-right: 10px;
+    padding-left: 10px;
+    background-color: #545454;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 1000;
+  }
+
+  .logocontainer {
+    display: flex;
+    align-items: center;
+    margin-right: 18px;
+    min-width: 140px;
+  }
+  
+
+  .logotext {
+    font-size: 20px;
+    font-family: 'PingFang SC';
+    margin-top: 5px;
+    font-weight: 600;
+    color: #FF6B6B;
+  }
+  
+
+  .menu {
+    font-size: 16px;
+    font-weight: 500;
+    min-width: 500px;
+    background-color: #545454;
+  }
+
+  .buttonStyle {
+    width: 100px;
+    margin-left: 20px;
+    margin-top: 18px;
+    font-family: 'PingFang SC';
+    font-size: 14px;
+  }
+
+  :global {
+    .ant-menu-light .ant-menu-item, 
+    .ant-menu-light>.ant-menu .ant-menu-item, 
+    .ant-menu-light .ant-menu-submenu-title, 
+    .ant-menu-light>.ant-menu .ant-menu-submenu-title {
+        color: rgb(255, 255, 255) !important;
+        font-family: PingFang SC !important;
+    }
+
+    .ant-menu-item:hover,
+    .ant-menu:not(.ant-menu-inline) .ant-menu-submenu-open,
+    .ant-menu-submenu-active,
+    .ant-menu-submenu-title:hover,
+    .ant-menu-horizontal > .ant-menu-item:hover,
+    .ant-menu-horizontal > .ant-menu-submenu:hover,
+    .ant-menu-horizontal > .ant-menu-item-active,
+    .ant-menu-horizontal > .ant-menu-submenu-active,
+    .ant-menu-horizontal > .ant-menu-item-open,
+    .ant-menu-horizontal > .ant-menu-submenu-open,
+    .ant-menu-horizontal > .ant-menu-item-selected,
+    .ant-menu-horizontal > .ant-menu-submenu-selected {
+      color: #FF6B6B !important; /* 悬浮和选中的字体颜色 */
+      font-family: PingFang SC;
+    }
+  
+    .ant-menu-horizontal > .ant-menu-item:hover,
+    .ant-menu-horizontal > .ant-menu-submenu:hover,
+    .ant-menu-horizontal > .ant-menu-item-active,
+    .ant-menu-horizontal > .ant-menu-submenu-active,
+    .ant-menu-horizontal > .ant-menu-item-open,
+    .ant-menu-horizontal > .ant-menu-submenu-open,
+    .ant-menu-horizontal > .ant-menu-item-selected,
+    .ant-menu-horizontal > .ant-menu-submenu-selected {
+      border-bottom: 0 ;/* 悬浮和选中的边框颜色 */
+    }
+  
+    .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+        background-color: rgba(255, 107, 107, 0.5) !important;
+        font-family: PingFang SC;
+    }
+
+    .ant-menu-light.ant-menu-horizontal >.ant-menu-item-selected::after, 
+    .ant-menu-light>.ant-menu.ant-menu-horizontal >.ant-menu-item-selected::after,
+    .ant-menu-light.ant-menu-horizontal >.ant-menu-submenu-selected::after, 
+    .ant-menu-light>.ant-menu.ant-menu-horizontal >.ant-menu-submenu-selected::after {
+        border: #FF6B6B solid 0.5px;
+        font-family: PingFang SC;
+
+    }
+
+    .ant-menu-light .ant-menu-submenu-selected >.ant-menu-submenu-title, 
+    .ant-menu-light>.ant-menu .ant-menu-submenu-selected >.ant-menu-submenu-title {
+        color: #FF6B6B;
+        font-family: PingFang SC;
+
+    }
+
+    .ant-menu-light.ant-menu-horizontal >.ant-menu-item:hover::after, .ant-menu-light>.ant-menu.ant-menu-horizontal >.ant-menu-item:hover::after, .ant-menu-light.ant-menu-horizontal >.ant-menu-submenu:hover::after, .ant-menu-light>.ant-menu.ant-menu-horizontal >.ant-menu-submenu:hover::after, .ant-menu-light.ant-menu-horizontal >.ant-menu-item-active::after, .ant-menu-light>.ant-menu.ant-menu-horizontal >.ant-menu-item-active::after, .ant-menu-light.ant-menu-horizontal >.ant-menu-submenu-active::after, .ant-menu-light>.ant-menu.ant-menu-horizontal >.ant-menu-submenu-active::after, .ant-menu-light.ant-menu-horizontal >.ant-menu-item-open::after, .ant-menu-light>.ant-menu.ant-menu-horizontal >.ant-menu-item-open::after, .ant-menu-light.ant-menu-horizontal >.ant-menu-submenu-open::after, .ant-menu-light>.ant-menu.ant-menu-horizontal >.ant-menu-submenu-open::after {
+        border-bottom-width: 2px;
+        border-bottom-color: #FF6B6B;
+        font-family: PingFang SC;
+
+    }
+  
+    .ant-menu-item-selected {
+      color: #FF6B6B;
+      font-family: PingFang SC;
+
+    }
+  
+    .ant-menu-item .anticon,
+    .ant-menu-submenu-title .anticon {
+      margin-right: 0;
+      margin-left: 3px;
+      font-family: PingFang SC;
+
+    }
+  
+    .ant-dropdown-menu-item:hover,.ant-dropdown-menu-submenu-title:hover {
+      background-color: rgb(255, 107, 107);
+      font-family: PingFang SC;
+
+    }
+
+    .ant-menu-submenu-open,
+    .ant-menu-submenu-active {
+      background-color: #545454;
+      font-family: PingFang SC;
+
+    }
+
+    .ant-menu-submenu > .ant-menu {
+      background-color: #686868 !important;
+      font-family: PingFang SC;
+
+    }
+
+    .ant-input-outlined {
+      background: #ffffff;
+      border-width: 1px;
+      border-style: solid;
+      border-color: #FF6B6B;
+      font-family: PingFang SC;
+
+    }
+
+    .ant-btn-variant-solid {
+      color: #FF6B6B;
+      background: #545454;
+      border: #FF6B6B 1px solid;
+      font-family: PingFang SC;
+
+    }
+
+    .ant-btn-variant-solid:not(:disabled):not(.ant-btn-disabled):hover {
+      background: #FF6B6B;
+      color: #ffffff;
+      font-family: PingFang SC;
+
+    }
+    
+    .ant-input-outlined:focus, .ant-input-outlined:focus-within {
+      border-color: #FF6B6B;
+      outline: 0;
+      background-color: #ffffff;
+      font-family: PingFang SC;
+
+    } 
+
+    .ant-input-outlined:hover {
+      border-color: #FF6B6B;
+      background-color: #ffffff;
+      font-family: PingFang SC;
+
+    }
+
+     a {
+      color: #ffffff;
+      font-family: PingFang SC;
+
+    }
+
+     a:hover {
+      color: #FF6B6B;
+      font-family: PingFang SC;
+      
+    }
+
+    .ant-dropdown .ant-dropdown-menu, 
+    .ant-dropdown-menu-submenu .ant-dropdown-menu {
+       background-color: #666;
+       font-family: PingFang SC;
+
+    }
+
+    .ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-item, 
+    .ant-dropdown-menu-submenu .ant-dropdown-menu .ant-dropdown-menu-item, 
+    .ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-submenu-title, 
+    .ant-dropdown-menu-submenu .ant-dropdown-menu .ant-dropdown-menu-submenu-title {
+       color: #ffffff;
+       font-family: PingFang SC;
+
+    }
+
+    .ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-item:hover, 
+    .ant-dropdown-menu-submenu .ant-dropdown-menu .ant-dropdown-menu-item:hover, 
+    .ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-submenu-title:hover, 
+    .ant-dropdown-menu-submenu .ant-dropdown-menu .ant-dropdown-menu-submenu-title:hover, 
+    .ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-item-active, 
+    .ant-dropdown-menu-submenu .ant-dropdown-menu .ant-dropdown-menu-item-active, 
+    .ant-dropdown .ant-dropdown-menu .ant-dropdown-menu-submenu-title-active, 
+    .ant-dropdown-menu-submenu .ant-dropdown-menu .ant-dropdown-menu-submenu-title-active {
+       background-color: rgba(255, 107, 107, 0.5);
+       font-family: PingFang SC;
+
+    }
+
+    .ant-btn-variant-outlined:not(:disabled):not(.ant-btn-disabled):hover, 
+    .ant-btn-variant-dashed:not(:disabled):not(.ant-btn-disabled):hover {
+      color: #fff;
+      border-color: #FF6B6B;
+      background: #FF6B6B;
+    }
+
+    .ant-btn-variant-outlined, 
+    .ant-btn-variant-dashed {
+      border-color: #FF6B6B;
+      background: #ffffff;
+      color: #FF6B6B;
+    }
+
+    
+    .ant-dropdown .ant-dropdown-menu, 
+    .ant-dropdown-menu-submenu .ant-dropdown-menu {
+      background-color: #666;
+      font-family: PingFang SC;
+      width: 120px;
+    }
+
+  }
+  

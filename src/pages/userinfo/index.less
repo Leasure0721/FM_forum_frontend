@@ -1,0 +1,125 @@
+.Page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'PingFang SC';
+    opacity: 0;
+    animation: fadeIn 1s forwards;  // 使用动画
+  
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  }
+
+.usernamestyle {
+  font-size: 24px;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.sexman {
+  font-size: 20px;
+  color: aqua;
+  margin-left: 10px;
+
+}
+
+.sexwoman {
+  font-size: 20px;
+  color: pink;
+  margin-left: 10px;
+
+}
+
+.sexalien {
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+.signstyle {
+  width: 500px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #ccc;
+}
+
+.coverstyle {
+  width: 178px;
+  height: 100px;
+  background: #666;
+  margin-right: 40px;
+}
+
+.titlestyle {
+  font-size: 20px;
+  font-weight: 600;  
+  margin-bottom: 1px;
+  color: white;
+}
+
+.contentstyle {
+  max-width: 550px;
+  max-height: 50px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;  /* 设置最大显示行数为 2 行 */
+  text-overflow: ellipsis;
+  font-size: 14px;
+  color: #ccc;
+  margin-bottom: 10px;
+}
+
+.datacontainer {
+  width: 500px;
+  height: 330px;
+}
+
+.dataheader {
+  background-color: #666;
+  padding: 15px 15px 5px 15px; 
+  color: white;
+  border-radius: 10px 10px 0 0;
+}
+
+.datacontent {
+  border:5px solid #666;
+  color: white;
+  padding: 10px;
+}
+
+.dataitem {
+  margin-right: 100px;
+}
+
+.logdata {
+  margin-top: 20px;
+}
+
+.logitem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+  background-color: #999;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.loginsuccess {
+  color: #4dff4d;
+}
+
+.loginfail {
+  color: #ff1b1b;
+}
+
+
+

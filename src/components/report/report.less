@@ -1,0 +1,64 @@
+.reportcontainer {
+    font-family: PingFang SC;
+}
+
+.reportbutton {
+    text-decoration: none;
+    color: #979797;
+    cursor: pointer;
+    font-size: 14px;
+
+    &:hover {
+        color: #ff6b6b;
+    }
+}
+
+.reporttitle {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.tagcontainer {
+    display: flex;
+    flex-wrap: wrap; /* 允许换行 */
+    margin-top: 10px; /* 标签容器的上边距 */
+}
+
+.reporttag {
+    flex: 1 1 calc(15%); 
+    margin: 5px; /* 每个标签的间距 */
+    padding: 10px; /* 标签内边距 */
+    background-color: #f0f0f0; 
+    text-align: center; 
+    cursor: pointer;
+
+    &:hover {
+        background-color: #ff6b6b;
+        color: #fff;
+    }
+
+    &.selected {
+        background-color: #ff6b6b; /* 点击后保持的样式 */
+        color: #fff;
+    }
+}
+
+.errormessage {
+    color: #c0392b;
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+.reportcontent {
+    margin-top: 10px;
+    height: 100px !important;
+    margin-bottom: 20px;
+}
+
+:global {
+    .ant-input-outlined:focus, 
+    .ant-input-outlined:focus-within {
+        box-shadow: none;
+    } 
+}
+
