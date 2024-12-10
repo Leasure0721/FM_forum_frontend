@@ -47,7 +47,11 @@ const Userinfo = () => {
                         
                         <div style={{padding:'30px',backgroundColor:'#666',borderRadius:'20px 20px 0 0'}}>
                             <div style={{display:'flex'}}>
-                                <Avatar src={avatar||<div style={{fontSize:'50px'}}>{username.charAt(0)}</div>} size={120} alt='头像'  style={{border:'1px solid #ff6b6b'}}/>
+                                <Avatar 
+                                     src={avatar||<div style={{fontSize:'50px'}}>{username.charAt(0)}</div>} 
+                                     size={120} alt='头像'  
+                                     style={{border:'1px solid #ff6b6b'}}/>
+                                
                                 <div style={{marginLeft:'40px'}}>
                                     <div className={styles.usernamestyle}>
                                         {username}

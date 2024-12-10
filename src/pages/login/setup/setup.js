@@ -1,44 +1,23 @@
-import React, { useState } from'react';
+import React, { useEffect, useState} from'react';
+import { useNavigate } from 'react-router-dom';
 import styles from '../common.less'
 import Logo from '../../../assets/svg/logo.svg';
 import { Input, Tooltip, ConfigProvider, DatePicker, Button} from 'antd';
 import locale from "antd/locale/zh_CN";
 import dayjs from "dayjs";
-import { useDispatch } from 'react-redux';
-import { setUsername,setSignature,setGender,setAvatar } from '../../../redux/userSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { setUsername,setSignature,setGender,setAvatar, setBirthday } from '../../../redux/userSlice';
 
 import 'dayjs/locale/zh-cn';
 import UploadAvatar from '../../userinfo/editinfo/uploadavatar';
 
 const Setup = () => {
     const [image, setImage] = useState('')
-    const [newusername, setnewUsername] = useState('')
     const [newgender, setnewGender] = useState('')
     const [newsignature, setnewSignature] = useState('')
     const [newavatar, setnewAvatar] = useState('')
     const [newbirthday, setnewBirthday] = useState('')
     const dispatch = useDispatch()
-
-    const handleUpload = (e) => {
-        const file = e.target.files[0]
-        if (file){
-            const reader = new FileReader()
-            reader.onload = () => {
-                const baseImage = reader.result;
-                setImage(reader.result)  // 读取图片base64编码
-            }
-            reader.readAsDataURL(file)  // 读取文件内容
-        }
-    }
-
-    const handleUsernameChange = (e) => {
-        const username = e.target.value
-        if (username.length >= 0) {
-            setnewUsername(username);
-            dispatch(setUsername(newusername));
-        }
-    };
-    
 
     const handleSignatureChange = (e) => {
         const signature = e.target.value
@@ -51,10 +30,26 @@ const Setup = () => {
         dispatch(setGender(gender));  // 直接使用传入的 gender
     };
     
-    
     const handleAvatarChange = (avatar) => {
         setnewAvatar(avatar);
-        dispatch(setAvatar(newavatar));
+        dispatch(setAvatar(avatar));
+    }
+
+    const handleBirthdayChange = (date, dateString) => {
+        setnewBirthday(dateString);
+        dispatch(setBirthday(dateString))
+    }
+
+    const [errormsg, setErrorMsg] = useState('')
+    const navigate = useNavigate();
+
+    const handleStart = () => {
+        if (!newsignature || !newgender || !newavatar || !newbirthday){
+            setErrorMsg('请填写完整信息!')
+            return;
+        }
+        setErrorMsg('')
+        navigate('/home')
     }
 
     return (    
@@ -66,30 +61,6 @@ const Setup = () => {
                 </div>
                 <div style={{ fontFamily: 'PingFang SC', display: 'flex', justifyContent: 'space-between' }}>
                     <div>
-                        {/* 用户名 */}
-                        {/* <div style={{ display: 'flex', marginBottom: '30px' }}>
-                            <div style={{ fontSize: '16px', marginTop: '3px', letterSpacing: '4px' }}>
-                                用户名:
-                            </div>
-                            <Input
-                                style={{ width: '300px', marginLeft: '10px' }}
-                                maxLength={20}
-                                showCount
-                                placeholder="没有名字可不行哦o(╥﹏╥)o"
-                                onChange={(e) => {
-                                    const value = e.target.value;
-                                    // 使用正则表达式替换空格
-                                    const newValue = value.replace(/\s/g, ''); // 去除所有空格字符
-                                   setnewUsername(newValue);
-                                }}
-                                onBlur={handleUsernameChange} // 失去焦点时更新用户名
-                                onKeyDown={(e) => {
-                                    if (e.key === 'Space') {
-                                        e.preventDefault(); // 阻止空格输入
-                                    }
-                                }}
-                            />
-                        </div> */}
 
                         {/* 性别 */}
                         <div style={{ display: 'flex', marginBottom: '30px' }}>
@@ -159,7 +130,11 @@ const Setup = () => {
                                 你的生日是？
                             </div>
                             <ConfigProvider locale={locale}>
-                                <DatePicker style={{ width: '300px', marginLeft: '10px' }} placeholder="请选择日期"/>
+                                <DatePicker 
+                                           style={{ width: '300px', marginLeft: '10px' }} 
+                                           placeholder={'请选择生日'}
+                                           onChange={handleBirthdayChange}
+                                           />
                             </ConfigProvider>
                         </div>
                     </div>
@@ -170,16 +145,28 @@ const Setup = () => {
                             修改头像:
                         </div>
                         <div>
-                            <UploadAvatar onAvatarChange={handleAvatarChange} avatar={newavatar} image={image} onUpload={handleUpload}/>
+                            <UploadAvatar onAvatarChange={handleAvatarChange} 
+                                          avatar={newavatar} />
                         </div>
                     </div>
 
 
                 </div>
 
-                <Button style={{marginTop: '30px', width: '50%',letterSpacing: '4px'}}>
-                    启动远山
-                </Button>
+                <div style={{ display: 'flex',flexDirection: 'column',alignItems: 'center'}}>
+                    <Button 
+                        style={{marginTop: '30px', width: '40%',letterSpacing: '4px'}}
+                        onClick={handleStart}>
+                        启动远山
+                    </Button>
+                    <Button   
+                        style={{marginTop: '10px', width: '40%',letterSpacing: '4px'}}>
+                        跳过并启动
+                    </Button>
+                    <div style={{color: 'red', fontSize: '14px', marginTop: '10px'}}>
+                        {errormsg}
+                    </div>
+                </div>
             </div>
 
         </div>

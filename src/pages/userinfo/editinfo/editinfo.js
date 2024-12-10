@@ -2,8 +2,8 @@ import { Avatar, ConfigProvider, DatePicker, Input, Tooltip } from "antd";
 import React, { useState } from "react";
 import styles from './index.less'
 import UploadAvatar from "./uploadavatar";
-import { useDispatch } from 'react-redux';
-import { setUsername, setSignature, setGender, setAvatar } from "../../../redux/userSlice";
+import { useDispatch, useSelector } from 'react-redux';
+import { setUsername, setSignature, setGender, setAvatar, setBirthday } from "../../../redux/userSlice";
 import locale from "antd/locale/zh_CN";
 import dayjs from "dayjs";
 
@@ -17,6 +17,7 @@ const EditInfo = ({ username, onUsernameChange, signature, onSignatureChange, ge
     const [newSignature, setNewSignature] = useState(signature);
     const [newGender, setNewGender] = useState(gender);
     const [newAvatar, setNewAvatar] = useState(avatar);
+    const [newBirthday, setNewBirthday] = useState('');
     const dispatch = useDispatch();
 
     // 更新用户名
@@ -46,6 +47,15 @@ const EditInfo = ({ username, onUsernameChange, signature, onSignatureChange, ge
         onAvatarChange(e); // 传递更新到父组件
         dispatch(setAvatar(e)); // 使用 setAvatar 更新 Redux
     }
+
+    const birthday = useSelector(state => state.user.birthday);
+
+    const handleBirthdayChange = (date, dateString) => {
+        setNewBirthday(dateString); // 更新本地状态
+        dispatch(setBirthday(dateString)); // 更新 Redux
+    }
+
+
 
     return (
         <div>
@@ -140,7 +150,11 @@ const EditInfo = ({ username, onUsernameChange, signature, onSignatureChange, ge
                             我的生日:
                         </div>
                         <ConfigProvider locale={locale}>
-                            <DatePicker style={{ width: '300px', marginLeft: '10px' }} placeholder="请选择日期"/>
+                            <DatePicker 
+                                        style={{ width: '300px', marginLeft: '10px' }} 
+                                        placeholder={birthday? birthday : '请选择生日'}
+                                        onChange={handleBirthdayChange}
+                                        />
                         </ConfigProvider>
                     </div>
                 </div>
@@ -151,7 +165,9 @@ const EditInfo = ({ username, onUsernameChange, signature, onSignatureChange, ge
                         修改头像:
                     </div>
                     <div>
-                        <UploadAvatar onAvatarChange={handleAvatarChange} avatar={newAvatar}/>
+                        <UploadAvatar 
+                                onAvatarChange={handleAvatarChange} 
+                                avatar={newAvatar}/>
                     </div>
                 </div>
             </div>

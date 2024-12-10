@@ -1,7 +1,7 @@
 import React, { useState } from'react';
 import styles from './index.less'
 
-const UploadAvatar = ({ onAvatarChange}) => {
+const UploadAvatar = ({ onAvatarChange,avatar}) => {
     const [image,setImage] = useState(null)
     
     const handleUpload = (e) => {
