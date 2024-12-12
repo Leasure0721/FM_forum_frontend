@@ -5,6 +5,7 @@ import MyMsg from './mymsg/mymsg';
 import ReplyMe from './replyme/relpyme';
 import ReciveSL from './reciveSL/reciveSL';
 import { useLocation, useParams } from 'react-router-dom';
+import SysMsg from './sysmsg/sysmsg';
 
 const Messageitems = [
     {
@@ -24,7 +25,8 @@ const Messageitems = [
     },
     {
         label: '系统消息',
-        key: 'system'
+        key: 'system',
+        children: (<SysMsg />)
     }
 ]
 

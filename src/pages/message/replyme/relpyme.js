@@ -23,6 +23,7 @@ const ReplyMe = () => {
                         borderBottom:'1px solid #e8e8e8',
                         padding: '10px 20px',
                         }}
+                        className={styles.listhover}
                         key={index}
                   >
                       <div style={{display: 'flex'}}>
