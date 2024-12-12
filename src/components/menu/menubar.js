@@ -79,25 +79,30 @@ const MenuBar = () => {
 const messageItems = [
   {
     key: 'message',
-    label: '我的消息'
+    label: '我的消息',
+    onClick: () => handleMenuClick('/message/message')
   },
   {
     label: '回复我的',
-    key: 'comment'
+    key: 'comment',
+    onClick: () => handleMenuClick('/message/comment')
   },
   {
-    label: '收到的赞',
-    key: 'like'
+    label: '赞和收藏',
+    key: 'like',
+    onClick: () => handleMenuClick('/message/like')
   },
   {
     label:'系统消息',
-    key:'system'
+    key:'system',
+    onClick: () => handleMenuClick('/message/system')
   }
 ]
 
 const tologin = () => {
   navigate('/login');
 }
+
 
 
 

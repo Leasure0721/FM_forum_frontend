@@ -2,7 +2,7 @@ import '@wangeditor/editor/dist/css/style.css' // 引入 css
 
 import React, { useState, useEffect } from 'react'
 import { Editor, Toolbar } from '@wangeditor/editor-for-react'
-import { IDomEditor, IEditorConfig, IToolbarConfig } from '@wangeditor/editor'
+import { DomEditor, IDomEditor, IEditorConfig, IToolbarConfig } from '@wangeditor/editor'
 import styles from './index.less'
 
 const FMEditor = () => {
@@ -18,7 +18,8 @@ const FMEditor = () => {
     const toolbarConfig = {}
 
     toolbarConfig.excludeKeys = [
-        'fullScreen'
+        'fullScreen',
+        'group-video'
     ]
 
     const editorConfig ={

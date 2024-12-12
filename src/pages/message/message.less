@@ -1,0 +1,144 @@
+.Page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'PingFang SC' !important;
+    opacity: 0;
+    animation: fadeIn 1s forwards;  // 使用动画
+  
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  }
+
+  .Content {
+    height: 650px;
+    margin-left: 10px;
+  }
+
+  .mymsgleftitem {
+    display: flex;
+    border-bottom: 1px solid #ccc;
+    height: 60px;
+    padding: 10px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #f5f5f5;
+    }
+  }
+
+  .userselected {
+    background-color: #f5f5f5;
+  }
+
+  .msgleftcontent {
+    margin-left: 10px;
+  }
+
+  .msgleftname {
+    width: 180px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .leftitem {
+    color: #888;
+  }
+
+  .righttitle {
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .count {
+    color: #fff;
+    background-color: #ff6b6b;
+    border-radius: 50%;
+    width: 5px;
+    height: 5px;
+    margin-top: 10px;
+  }
+
+  .reporticon {
+    padding-left: 5px;
+    padding-right: 5px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #ccc;
+    }
+  }
+
+  .input {
+    width: 100%;
+    height: 180px !important;
+    font-size: 16px;
+    border: none;
+    padding: 10px;
+    box-sizing: border-box;
+    outline: none;
+  }
+
+  .rightcontent {
+    height: 395px;
+    border-bottom: 1px solid #ccc;
+    padding: 5px;
+    overflow:auto;
+}
+
+.iconrSL {
+  color: #ff6b6b;
+  margin-left: 5px;
+}
+
+
+
+:global {
+  .ant-tabs .ant-tabs-tab {
+    font-size: 18px !important;
+    color: #ccc !important;
+  }
+
+  .ant-tabs-top > .ant-tabs-nav, 
+  .ant-tabs-bottom > .ant-tabs-nav, 
+  .ant-tabs-top > div > .ant-tabs-nav, 
+  .ant-tabs-bottom > div > .ant-tabs-nav {
+    margin: 0px 0px 0px 10px !important;
+  }
+
+  .ant-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+    color: #ff6b6b !important;
+  }
+
+  .ant-tabs .ant-tabs-tab:hover {
+    color: #ff6b6b !important;
+  }
+
+  .ant-tabs .ant-tabs-tab-btn:focus:not(:focus-visible), 
+  .ant-tabs .ant-tabs-tab-remove:focus:not(:focus-visible), 
+  .ant-tabs .ant-tabs-tab-btn:active, 
+  .ant-tabs .ant-tabs-tab-remove:active {
+    color: #ff6b6b !important;
+  }
+
+  .ant-tabs .ant-tabs-ink-bar {
+    background: #ff6b6b !important;
+  }
+
+  .ant-input-outlined:focus, 
+  .ant-input-outlined:focus-within {
+    border-color: #ff6b6b !important;
+    box-shadow: none !important;
+  }
+}

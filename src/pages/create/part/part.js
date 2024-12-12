@@ -50,13 +50,13 @@ const Part = () => {
             <TreeSelect
                 value={value}
                 dropdownStyle={{fontFamily:'PingFang SC'}}
-                placeholder="请选择你的分区"
+                placeholder="请选择分区"
                 allowClear
                 treeDefaultExpandAll
                 onChange={onChange}
                 treeData={partData}
                 onPopupScroll={onPopupSrool}
-                style={{ width: '160px',letterSpacing:'2px' }}
+                style={{ width: '120px',letterSpacing:'1px' }}
             />
         </div>
     )

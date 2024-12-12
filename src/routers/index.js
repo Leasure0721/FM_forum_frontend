@@ -15,6 +15,7 @@ const MyContentPage = lazy(() => import("../pages/userinfo/userinfo.js"));  // �
 const CreateContentPage = lazy(() => import("../pages/create/create.js"));  // 引入 createcontentpage 组件
 const PostPage = lazy(() => import("../pages/post/post.js"));  // 引入 postpage 组件
 const SetupPage = lazy(() => import("../pages/login/setup/setup.js"));  // 引入 setuppage 组件
+const MessagePage = lazy(() => import("../pages/message/message.js"));  // 引入 messagepage 组件
 
 const routers = [
   <Suspense fallback={<Loading />}>
@@ -46,6 +47,9 @@ const routers = [
 
        {/* 帖子相关 */}
        <Route path="/post" element={<PostPage />} />
+
+       {/* 消息相关 */}
+       <Route path="/message/:tabId?" element={<MessagePage />} />
       
       {/* 错误页面 */}
       <Route path="*" element={<ErrorPage />} />
