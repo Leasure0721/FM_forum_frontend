@@ -151,6 +151,7 @@ const EditInfo = ({ username, onUsernameChange, signature, onSignatureChange, ge
                         </div>
                         <ConfigProvider locale={locale}>
                             <DatePicker 
+                                        value={newBirthday}
                                         style={{ width: '300px', marginLeft: '10px' }} 
                                         placeholder={birthday? birthday : '请选择生日'}
                                         onChange={handleBirthdayChange}

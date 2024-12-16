@@ -1,39 +1,40 @@
 .loginPage {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80vh;
-    font-family: 'PingFang SC';
-    opacity: 0;
-    animation: fadeIn 1s forwards;  // 使用动画
-  
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  font-family: 'PingFang SC';
+  opacity: 0;
+  animation: fadeIn 1s forwards; // 使用动画
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
     }
+
+    to {
+      opacity: 1;
+    }
+  }
 }
 
 .loginContent {
-    text-align: center;
-    background-color: white;
-    border-radius: 8px;
-    padding: 40px;
-    max-width: 500px;
-    max-width: 500px;
-    width: 100%;
-    font-family: PingFang SC;
+  text-align: center;
+  background-color: white;
+  border-radius: 8px;
+  padding: 40px;
+  max-width: 500px;
+  max-width: 500px;
+  width: 100%;
+  font-family: PingFang SC;
 }
 
 .emailenter {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: -25px;
-    margin-right: -20px;
-    font-size: 12px;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -25px;
+  margin-right: -20px;
+  font-size: 12px;
 }
 
 .errorMessage {
@@ -47,24 +48,26 @@
 
 
 :global {
-  :where(.css-dev-only-do-not-override-tpassh).ant-input-outlined:focus, :where(.css-dev-only-do-not-override-tpassh).ant-input-outlined:focus-within {
+
+  .ant-input-outlined:focus,
+  .ant-input-outlined:focus-within {
     border-color: #FF6B6B;
     box-shadow: 0 0 0 2px rgba(5, 145, 255, 0);
     outline: 0;
     background-color: #ffffff;
   }
 
-  :where(.css-dev-only-do-not-override-tpassh).ant-input-affix-wrapper-focused, 
-  :where(.css-dev-only-do-not-override-tpassh).ant-input-affix-wrapper:focus {
-    box-shadow: 0 0 0 1px rgb(255, 107, 107,0.2);
+  .ant-input-affix-wrapper-focused,
+  .ant-input-affix-wrapper:focus {
+    box-shadow: 0 0 0 1px rgb(255, 107, 107, 0.2);
   }
 
-  :where(.css-dev-only-do-not-override-tpassh).ant-input-outlined:focus, 
-  :where(.css-dev-only-do-not-override-tpassh).ant-input-outlined:focus-within{
-    box-shadow: 0 0 0 1px rgb(255, 107, 107,0.2);
+  .ant-input-outlined:focus,
+  .ant-input-outlined:focus-within {
+    box-shadow: 0 0 0 1px rgb(255, 107, 107, 0.2);
   }
-  
-  :where(.css-dev-only-do-not-override-tpassh).ant-btn-variant-solid:not(:disabled):not(.ant-btn-disabled):active {
+
+  .ant-btn-variant-solid:not(:disabled):not(.ant-btn-disabled):active {
     background: #FF6B6B;
     color: #fff;
   }
