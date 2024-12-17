@@ -17,7 +17,7 @@ const EditInfo = ({ username, onUsernameChange, signature, onSignatureChange, ge
     const [newSignature, setNewSignature] = useState(signature);
     const [newGender, setNewGender] = useState(gender);
     const [newAvatar, setNewAvatar] = useState(avatar);
-    const [newBirthday, setNewBirthday] = useState('');
+    const [newBirthday, setNewBirthday] = useState(null);
     const dispatch = useDispatch();
 
     // 更新用户名
@@ -51,7 +51,7 @@ const EditInfo = ({ username, onUsernameChange, signature, onSignatureChange, ge
     const birthday = useSelector(state => state.user.birthday);
 
     const handleBirthdayChange = (date, dateString) => {
-        setNewBirthday(dateString); // 更新本地状态
+        setNewBirthday(date); // 更新本地状态
         dispatch(setBirthday(dateString)); // 更新 Redux
     }
 

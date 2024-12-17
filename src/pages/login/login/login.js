@@ -8,12 +8,18 @@ import { useNavigate } from 'react-router-dom';
 import Logo from '../../../assets/svg/logo.svg'
 import '../../../mock/login'
 import axios from 'axios';
+import { useAuth } from '../../../context/AuthContext';
+import { useDispatch, useSelector } from 'react-redux';
+import { setAvatar, setBirthday, setGender, setUsername,setSignature } from '../../../redux/userSlice';
+import moment from 'moment/moment';
 
 
 const Login = () => {
     const [account, setAccount] = React.useState('');
     const [password, setPassword] = React.useState('');
     const [errorMessages, setErrorMessages] = useState("");
+
+    const { login } = useAuth();
 
     const navigate = useNavigate();
 
@@ -26,19 +32,15 @@ const Login = () => {
         })
     }
 
+    const dispatch = useDispatch();
+
     const handleLogin = async () => {
         if (isInputEmpty(account) || isInputEmpty(password)) {
             setErrorMessages("输入框不能为空！");
             return;
         }
-        // if (account.includes('@') ) {
-        //     if (!isEmailValid(account)) {
-        //         setErrorMessages("请输入正确的邮箱格式！");
-        //         return;
-        //     }
-        // }
+
         else {
-            console.log('username login');
             try {
                 const response = await fetch('http://localhost:8081/users/login', {
                     method: 'POST',
@@ -51,9 +53,20 @@ const Login = () => {
                     })
                 })
                 const data = await response.json();
-                console.log(data);
                 if (data.code === '200') {
+                    dispatch(setUsername(data.data.account));
+
+                    const date = new Date(data.data.birthday);
+                    const formattedDate = moment(date).format('YYYY-MM-DD');
+                    dispatch(setBirthday(formattedDate));
+
+                    dispatch(setGender(data.data.gender));
+                    dispatch(setAvatar(data.data.avatar));
+                    dispatch(setSignature(data.data.signature));
+
+                   
                     success();
+                    login();
                     setTimeout(() => {
                         navigate('/home');
                     }, 800);
@@ -66,26 +79,6 @@ const Login = () => {
                 setErrorMessages("网络错误，请稍后再试！");
             }
         }
-
-
-        // try {
-        //     const response = await axios.post('/api/login', {
-        //         account,
-        //         password
-        //     });
-
-        //     console.log(response);
-        //     const data = response.data;
-        //     if(data.success){
-        //         navigate('/home');
-        //     }else{
-        //         setErrorMessages("用户名或密码错误！");
-        //     }
-
-        // }catch(error){
-        //     console.log('error detailes',error.response);
-        //     setErrorMessages("网络错误，请稍后再试！");
-        // }
     }
 
     return (

@@ -5,10 +5,13 @@ import { UserOutlined, MailOutlined, LockOutlined, ArrowLeftOutlined } from '@an
 import { checkPasswordStrength, isInputEmpty, isEmailValid } from '../../../utils/validation';
 import { useNavigate } from "react-router-dom";
 import Logo from '../../../assets/svg/logo.svg';
+import { useAuth } from '../../../context/AuthContext';
+import { useDispatch } from 'react-redux';
+import { setUsername } from '../../../redux/userSlice';
 
 const Register = () => {
     const [password, setPassword] = useState('');
-    const [username, setUsername] = useState('');
+    const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [captcha, setCaptcha] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
@@ -78,12 +81,10 @@ const Register = () => {
             if (data.code === '200') {
                 captchasuccess();
             }
-
         } catch (error) {
             console.log(error);
             setErrorMessage('验证码发送失败，请稍后再试');
         }
-
     }
 
     const regsuccess = () => {
@@ -93,12 +94,16 @@ const Register = () => {
         })
     }
 
+    const { login } = useAuth();
+
+    const dispatch = useDispatch();
+
     const handleRegister = async () => {
-        if (isInputEmpty(username)) {
+        if (isInputEmpty(name)) {
             setErrorMessage('用户名不为空');
             return;
         }
-        if (username.length < 1 || username.length > 16) {
+        if (name.length < 1 || name.length > 16) {
             setErrorMessage('用户名长度为 2 - 16 位');
             return;
         }
@@ -130,7 +135,7 @@ const Register = () => {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    account: username,
+                    account: name,
                     mail: email,
                     password: password,
                     captcha: captcha
@@ -138,7 +143,11 @@ const Register = () => {
             })
             const data = await response.json();
             if (data.code === '200') {
+
+                dispatch(setUsername(data.data.account))
+
                 regsuccess();
+                login();
                 setTimeout(() => {
                     navigate('/setup');
                 }, 800)
@@ -165,11 +174,11 @@ const Register = () => {
                 <div style={{ marginBottom: '20px' }}>
                     <Input placeholder="请输入用户名"
                         prefix={<UserOutlined />}
-                        value={username}
+                        value={name}
                         onChange={(e) => {
                             const value = e.target.value;
                             if (!value.includes(' ')) {
-                                setUsername(value);
+                                setName(value);
                             }
                         }} />
                 </div>

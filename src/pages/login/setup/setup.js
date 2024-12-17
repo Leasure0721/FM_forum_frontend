@@ -42,12 +42,34 @@ const Setup = () => {
 
     const [errormsg, setErrorMsg] = useState('')
     const navigate = useNavigate();
+    const account = useSelector(state => state.user.username)
 
-    const handleStart = () => {
+
+    const handleStart = async() => {
         if (!newsignature || !newgender || !newavatar || !newbirthday) {
             setErrorMsg('请填写完整信息!')
             return;
         }
+
+        try{
+            const response = await fetch('http://localhost:8081/users/updateUserInfo',{
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    account:account,
+                    signature:newsignature,
+                    gender:newgender,
+                    avatar:newavatar,
+                    birthday:dayjs(newbirthday).format('YYYY-MM-DD')
+                })
+            })
+        }catch(error){
+            console.log(error)
+            setErrorMsg('网络错误，请稍后再试！')
+        }
+
         setErrorMsg('')
         navigate('/home')
     }

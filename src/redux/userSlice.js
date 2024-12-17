@@ -7,7 +7,8 @@ const initialState = {
     signature: '这个人很懒，什么都没留下~', // 初始化签名为 '这个人很懒，什么都没留下~'
     gender: 'other', // 初始化性别为 'other'
     avatar: '' ,// 初始化头像为空字符串
-    birthday: null // 初始化生日为空值
+    birthday: null, // 初始化生日为空值
+    createtime: null, // 初始化创建时间为空值
 }
 
 // 创建 userSlice
@@ -41,11 +42,16 @@ const userSlice = createSlice({
             // 确保生日的格式为 "YYYY-MM-DD"，可以根据需要做日期验证
             state.birthday = birthday ? birthday : null; // 如果没有传入有效生日，则设为 null
         },
+        setCreatetime: (state, action) => {
+            const createtime = action.payload;
+            // 确保创建时间的格式为 "YYYY-MM-DD HH:mm:ss"，可以根据需要做日期验证
+            state.createtime = createtime ? createtime : null; // 如果没有传入有效创建时间，则设为 null
+        }
     },    
 });
 
 // 导出 setUsername action，以便在组件中使用
-export const { setUsername, setSignature, setGender, setAvatar, setBirthday } = userSlice.actions;
+export const { setUsername, setSignature, setGender, setAvatar, setBirthday, setCreatetime } = userSlice.actions;
 
 // 导出 userSlice 的 reducer，以便在 store 中使用
 export default userSlice.reducer;

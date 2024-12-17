@@ -6,6 +6,11 @@ import { Input, Button, message } from "antd";
 import { isInputEmpty, isEmailValid } from "../../../utils/validation";
 import { MailOutlined } from "@ant-design/icons";
 import Logo from "../../../assets/svg/logo.svg";
+import { useAuth } from '../../../context/AuthContext';
+import { useDispatch } from "react-redux";
+import { setAvatar, setBirthday, setGender, setUsername,setSignature } from '../../../redux/userSlice';
+import moment from "moment";
+
 
 const EmailVer = () => {
     const navigate = useNavigate();
@@ -20,6 +25,8 @@ const EmailVer = () => {
     const [captchabtnstyl, setCaptchabtnstyl] = useState(true);
     const [timer, setTimer] = useState(0);
     const [disabled, setDisabled] = useState(false);
+
+    const { login } = useAuth();
 
     useEffect(() => {
         // 如果 timer > 0，设置每秒更新一次
@@ -81,6 +88,8 @@ const EmailVer = () => {
         })
     }
 
+    const dispatch = useDispatch();
+
     const handleemailver = async () => {
         if (isInputEmpty(email)) {
             setErrorMessage("邮箱不为空！");
@@ -108,7 +117,18 @@ const EmailVer = () => {
             });
             const data = await response.json();
             if (data.code === "200") {
+                dispatch(setUsername(data.data.account));
+
+                const date = new Date(data.data.birthday);
+                const formattedDate = moment(date).format('YYYY-MM-DD');
+                dispatch(setBirthday(formattedDate));
+
+                dispatch(setGender(data.data.gender));
+                dispatch(setAvatar(data.data.avatar));
+                dispatch(setSignature(data.data.signature));
+
                 success();
+                login();
                 setTimeout(() => {
                     navigate('/home');
                 }, 800)

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import styles from '../common.less'
 import { useNavigate } from "react-router-dom";
 import { ArrowLeftOutlined, MailOutlined, LockOutlined } from '@ant-design/icons';
-import { Input, Button } from "antd";
+import { Input, Button, message } from "antd";
 import { checkPasswordStrength, isInputEmpty, isEmailValid } from '../../../utils/validation';
 import Logo from '../../../assets/svg/logo.svg';
 
@@ -46,6 +46,8 @@ const ForgetPwd = () => {
         }
     }, [timer]); // 依赖于 timer，timer 每次变化时都会触发 useEffect
 
+
+
     const handleCaptcha = async () => {
         if (isInputEmpty(email)) {
             setErrorMessages('邮箱不为空');
@@ -75,7 +77,15 @@ const ForgetPwd = () => {
             console.log(error);
             setErrorMessages('验证码发送失败，请稍后再试');
         }
+    }
 
+    const [messageApi, contextHolder] = message.useMessage();
+
+    const resetsuccess = () => {
+        messageApi.open({
+            type:'success',
+            content: '密码修改成功, 请重新登录',
+        })
     }
 
     const handleforgetPwd = async () => {
@@ -127,7 +137,10 @@ const ForgetPwd = () => {
             const data = await response.json();
 
             if (data.code === '200') {
-                navigate('/login');
+                resetsuccess();
+                setTimeout(() => {
+                    navigate('/login');
+                }, 800);
             }
         } catch (error) {
             console.log(error);
@@ -137,6 +150,7 @@ const ForgetPwd = () => {
 
     return (
         <div className={styles.Page}>
+            {contextHolder}
             <div className={styles.Content}>
                 <div className={styles.bcklogin} onClick={handleBack}>
                     <ArrowLeftOutlined style={{ marginTop: '4px', marginRight: '4px' }} /> 返回登录

@@ -5,10 +5,13 @@ import CustomTabs from './content/customtabs';
 import { useNavigate } from 'react-router-dom';
 import Morenpic from '../../assets/img/default.png'
 import CDR from './calendar/ver1/CDR';
+import { useAuth } from '../../context/AuthContext';
 
 
 const HomePage = () => {
   const navigate = useNavigate();
+
+  const { isLogin } = useAuth();
 
   return (
     <div className={styles.homepage}>
