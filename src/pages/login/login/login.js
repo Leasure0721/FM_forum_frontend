@@ -8,18 +8,16 @@ import { useNavigate } from 'react-router-dom';
 import Logo from '../../../assets/svg/logo.svg'
 import '../../../mock/login'
 import axios from 'axios';
-import { useAuth } from '../../../context/AuthContext';
 import { useDispatch, useSelector } from 'react-redux';
-import { setAvatar, setBirthday, setGender, setUsername,setSignature } from '../../../redux/userSlice';
+import { setAvatar, setBirthday, setGender, setUsername,setSignature, setCreatetime } from '../../../redux/userSlice';
 import moment from 'moment/moment';
+import { login } from '../../../redux/authSlice';
 
 
 const Login = () => {
     const [account, setAccount] = React.useState('');
     const [password, setPassword] = React.useState('');
     const [errorMessages, setErrorMessages] = useState("");
-
-    const { login } = useAuth();
 
     const navigate = useNavigate();
 
@@ -60,13 +58,19 @@ const Login = () => {
                     const formattedDate = moment(date).format('YYYY-MM-DD');
                     dispatch(setBirthday(formattedDate));
 
+                    const createtime = new Date(data.data.createtime);
+                    const formattedCreatetime = moment(createtime).format('YYYY-MM-DD HH:mm:ss');
+                    dispatch(setCreatetime(formattedCreatetime));
+
                     dispatch(setGender(data.data.gender));
                     dispatch(setAvatar(data.data.avatar));
-                    dispatch(setSignature(data.data.signature));
-
+                    if (data.data.signature != null) {
+                        dispatch(setSignature(data.data.signature));
+                    }
                    
                     success();
-                    login();
+                    dispatch(login());
+
                     setTimeout(() => {
                         navigate('/home');
                     }, 800);

@@ -1,7 +1,6 @@
 import React, { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import Loading from "../components/loading/load.js";
-import Login from "../pages/login/login/login.js";
 
 const HomePage = lazy(() => import("../pages/home/homepage.js"));  // 引入 homepage 组件
 const ErrorPage = lazy(() => import("../components/error/error.js"));  // 引入 errorpage 组件

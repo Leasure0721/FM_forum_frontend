@@ -5,13 +5,17 @@ import CustomTabs from './content/customtabs';
 import { useNavigate } from 'react-router-dom';
 import Morenpic from '../../assets/img/default.png'
 import CDR from './calendar/ver1/CDR';
-import { useAuth } from '../../context/AuthContext';
+import { useSelector } from 'react-redux';
 
 
 const HomePage = () => {
   const navigate = useNavigate();
 
-  const { isLogin } = useAuth();
+  const { isLogin } = useSelector(state => state.auth);
+  
+
+  const { username, avatar } = useSelector(state => state.user);
+
 
   return (
     <div className={styles.homepage}>
@@ -83,30 +87,66 @@ const HomePage = () => {
         <div>
           <div className={styles.userinfocontainer}>
             <div className={styles.userinfoheader}>
-              <div>
-                <Avatar size={64} style={{ border: '1px solid #FF6B6B', cursor: 'pointer' }} onClick={() => navigate('/login')}>登录</Avatar>
-              </div>
-              <div style={{ padding: '10px 10px 10px 0', cursor: 'pointer' }} onClick={() => navigate('/login')}>
-                未登录
-              </div>
-              <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                <div style={{ padding: '10px' }}>
+              {!isLogin ? (
+                <div style={{ display: 'flex' }}>
                   <div>
-                    关 注
+                    <Avatar size={64} style={{ border: '1px solid #FF6B6B', cursor: 'pointer' }} onClick={() => navigate('/login')}>登录</Avatar>
                   </div>
-                  <div>
-                    ----
-                  </div>
-                </div>
-                <div style={{ padding: '10px' }}>
-                  <div>
-                    粉 丝
-                  </div>
-                  <div>
-                    ----
+                  <div style={{
+                    padding: '10px 10px 10px 0',
+                    marginLeft: '20px',
+                    marginTop: '10px',
+                    cursor: 'pointer',
+                    letterSpacing: '1px',
+                  }} onClick={() => navigate('/login')}>
+                    未登录
                   </div>
                 </div>
-              </div>
+              ) : (
+                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                  <div style={{ display: 'flex' }}>
+                    <div>
+                      <Avatar size={64}
+                        style={{ border: '1px solid #FF6B6B', cursor: 'pointer' }}
+                        src={avatar || <div>{username.charAt(0)}</div>} />
+                    </div>
+                    <div style={{
+                      padding: '10px 10px 10px 0',
+                      marginLeft: '10px',
+                      marginTop: '10px',
+                      whiteSpace: 'nowrap',
+                      overflow: 'hidden',
+                      textOverflow: 'ellipsis',
+                      maxWidth: '80px',
+                      fontWeight: 'bold',
+                      letterSpacing: '1px',
+                    }}>
+                      {username}
+                    </div>
+                  </div>
+
+                  <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                    <div style={{ padding: '10px' }}>
+                      <div>
+                        关 注
+                      </div>
+                      <div>
+                        ---
+                      </div>
+                    </div>
+                    <div style={{ padding: '10px' }}>
+                      <div>
+                        粉 丝
+                      </div>
+                      <div>
+                        ---
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+
             </div>
             <div >
               <CDR />

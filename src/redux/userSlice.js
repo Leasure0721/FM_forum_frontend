@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 // 定义初始状态
 const initialState = {
-    username: '用户名', // 初始化用户名为 '用户名'
+    username: '', // 初始化用户名为 '用户名'
     signature: '这个人很懒，什么都没留下~', // 初始化签名为 '这个人很懒，什么都没留下~'
     gender: 'other', // 初始化性别为 'other'
     avatar: '' ,// 初始化头像为空字符串

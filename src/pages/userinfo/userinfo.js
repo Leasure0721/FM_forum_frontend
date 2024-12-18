@@ -21,6 +21,7 @@ const Userinfo = () => {
     const signature = useSelector(state => state.user.signature);
     const gender = useSelector(state => state.user.gender);
     const avatar = useSelector(state => state.user.avatar);
+    const createtime = useSelector(state => state.user.createtime);
     const dispatch = useDispatch();
 
     const handleUsernameChange = (newUsername) => {
@@ -69,7 +70,7 @@ const Userinfo = () => {
                                         {signature}
                                     </div>
                                     <div style={{color:'#999',marginTop:'10px'}}>
-                                        第一次启动远山 ：2021-08-01
+                                        第一次启动远山 ：{createtime}
                                     </div>
                                 </div>
                             </div>

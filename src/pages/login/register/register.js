@@ -5,9 +5,9 @@ import { UserOutlined, MailOutlined, LockOutlined, ArrowLeftOutlined } from '@an
 import { checkPasswordStrength, isInputEmpty, isEmailValid } from '../../../utils/validation';
 import { useNavigate } from "react-router-dom";
 import Logo from '../../../assets/svg/logo.svg';
-import { useAuth } from '../../../context/AuthContext';
 import { useDispatch } from 'react-redux';
 import { setUsername } from '../../../redux/userSlice';
+import { login } from '../../../redux/authSlice';
 
 const Register = () => {
     const [password, setPassword] = useState('');
@@ -94,8 +94,6 @@ const Register = () => {
         })
     }
 
-    const { login } = useAuth();
-
     const dispatch = useDispatch();
 
     const handleRegister = async () => {
@@ -147,7 +145,7 @@ const Register = () => {
                 dispatch(setUsername(data.data.account))
 
                 regsuccess();
-                login();
+                dispatch(login());
                 setTimeout(() => {
                     navigate('/setup');
                 }, 800)

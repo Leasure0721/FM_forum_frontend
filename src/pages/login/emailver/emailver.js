@@ -6,10 +6,10 @@ import { Input, Button, message } from "antd";
 import { isInputEmpty, isEmailValid } from "../../../utils/validation";
 import { MailOutlined } from "@ant-design/icons";
 import Logo from "../../../assets/svg/logo.svg";
-import { useAuth } from '../../../context/AuthContext';
 import { useDispatch } from "react-redux";
 import { setAvatar, setBirthday, setGender, setUsername,setSignature } from '../../../redux/userSlice';
 import moment from "moment";
+import { login } from "../../../redux/authSlice";
 
 
 const EmailVer = () => {
@@ -25,8 +25,6 @@ const EmailVer = () => {
     const [captchabtnstyl, setCaptchabtnstyl] = useState(true);
     const [timer, setTimer] = useState(0);
     const [disabled, setDisabled] = useState(false);
-
-    const { login } = useAuth();
 
     useEffect(() => {
         // 如果 timer > 0，设置每秒更新一次
@@ -128,7 +126,7 @@ const EmailVer = () => {
                 dispatch(setSignature(data.data.signature));
 
                 success();
-                login();
+                dispatch(login())
                 setTimeout(() => {
                     navigate('/home');
                 }, 800)
