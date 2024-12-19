@@ -11,7 +11,7 @@ import storage from'redux-persist/lib/storage';
 
 // 创建 Redux Persist 的配置
 const persistConfig = {
-  key: 'root',
+  key: 'user',
   storage
 }
 

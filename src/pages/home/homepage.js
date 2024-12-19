@@ -103,46 +103,22 @@ const HomePage = () => {
                   </div>
                 </div>
               ) : (
-                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                <div>
                   <div style={{ display: 'flex' }}>
                     <div>
                       <Avatar size={64}
-                        style={{ border: '1px solid #FF6B6B', cursor: 'pointer' }}
+                        style={{ border: '1px solid #FF6B6B' }}
                         src={avatar || <div>{username.charAt(0)}</div>} />
                     </div>
-                    <div style={{
-                      padding: '10px 10px 10px 0',
-                      marginLeft: '10px',
-                      marginTop: '10px',
-                      whiteSpace: 'nowrap',
-                      overflow: 'hidden',
-                      textOverflow: 'ellipsis',
-                      maxWidth: '80px',
-                      fontWeight: 'bold',
-                      letterSpacing: '1px',
-                    }}>
+                    <div className={styles.username}
+                    onClick={() => navigate('/userinfo')}>
                       {username}
                     </div>
                   </div>
 
-                  <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <div style={{ padding: '10px' }}>
-                      <div>
-                        关 注
-                      </div>
-                      <div>
-                        ---
-                      </div>
-                    </div>
-                    <div style={{ padding: '10px' }}>
-                      <div>
-                        粉 丝
-                      </div>
-                      <div>
-                        ---
-                      </div>
-                    </div>
-                  </div>
+                 <div style={{marginTop: '10px'}}>
+                  已经连续签到：<span style={{fontWeight: 'bold' }}>10</span> 天
+                 </div>
                 </div>
               )}
 
