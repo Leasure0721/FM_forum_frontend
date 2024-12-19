@@ -6,10 +6,10 @@ import { UserOutlined } from '@ant-design/icons';
 import { Avatar } from 'antd';
 import FollowBtn from "../../components/followbtn/followbtn";
 import { LikeOutlined, MessageOutlined, StarOutlined } from '@ant-design/icons';
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 const Follow = () => {
-    const isLogin = useSelector(state => state.user.isLogin);
+    const isLogin = useSelector(state => state.auth.isLogin);
 
     return (
         <div>

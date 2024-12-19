@@ -38,6 +38,10 @@ const userSlice = createSlice({
         },
         // 修改生日的 reducer
         setBirthday: (state, action) => {
+            if  (action.payload === null || action.payload === '') {
+                state.birthday = '暂无数据'; // 如果生日为空值或空字符串，则将生日设置为 null
+                return;
+            }
             const birthday = action.payload;
             // 确保生日的格式为 "YYYY-MM-DD"，可以根据需要做日期验证
             state.birthday = birthday ? birthday : null; // 如果没有传入有效生日，则设为 null
@@ -45,7 +49,7 @@ const userSlice = createSlice({
         setCreatetime: (state, action) => {
             const createtime = action.payload;
             // 确保创建时间的格式为 "YYYY-MM-DD HH:mm:ss"，可以根据需要做日期验证
-            state.createtime = createtime ? createtime : null; // 如果没有传入有效创建时间，则设为 null
+            state.createtime = createtime ? createtime : '暂无数据'; // 如果没有传入有效创建时间，则设为 null
         }
     },    
 });

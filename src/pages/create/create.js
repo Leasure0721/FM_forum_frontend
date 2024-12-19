@@ -11,8 +11,6 @@ import NoLogin from "../../components/nologin/nologin";
 
 const Create = () => {
     const [image, setImage] = useState(null);
-    const [showtopic, setShowtopic] = useState(false);
-    const [topiccontent, setTopiccontent] = useState("选择话题");
 
     const handleUpload = (event) => {
         const file = event.target.files[0];
@@ -25,16 +23,7 @@ const Create = () => {
         }
     };
 
-    const ontopicClick = () => {
-        setShowtopic(true);
-    }
-
-    const closeTopic = (topic) => {
-        setTopiccontent(topic);
-        setShowtopic(false);
-    }
-
-    const isLogin = useSelector(state => state.user.isLogin);
+    const isLogin = useSelector(state => state.auth.isLogin);
 
     return (
         <div>
@@ -102,10 +91,7 @@ const Create = () => {
                                 话题
                             </div>
                             <div>
-                                <button className={styles.partbtn} onMouseEnter={ontopicClick}>
-                                    # {topiccontent}
-                                </button>
-                                {showtopic && <Topic closeTopic={closeTopic} />}
+                               <Topic />
                             </div>
                         </div>
                         <div style={{ display: 'flex', justifyContent: 'flex-end' }}>

@@ -179,11 +179,6 @@ const Setup = () => {
                         onClick={handleStart}>
                         启动远山
                     </Button>
-                    <Button
-                        style={{ marginTop: '10px', width: '40%', letterSpacing: '4px' }}
-                        onClick={() => navigate('/home')}>
-                        跳过并启动
-                    </Button>
                     <div style={{ color: 'red', fontSize: '14px', marginTop: '10px' }}>
                         {errormsg}
                     </div>

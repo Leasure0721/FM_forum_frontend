@@ -6,7 +6,7 @@ import { checkPasswordStrength, isInputEmpty, isEmailValid } from '../../../util
 import { useNavigate } from "react-router-dom";
 import Logo from '../../../assets/svg/logo.svg';
 import { useDispatch } from 'react-redux';
-import { setUsername } from '../../../redux/userSlice';
+import { setCreatetime, setUsername } from '../../../redux/userSlice';
 import { login } from '../../../redux/authSlice';
 
 const Register = () => {
@@ -143,6 +143,7 @@ const Register = () => {
             if (data.code === '200') {
 
                 dispatch(setUsername(data.data.account))
+                dispatch(setCreatetime(data.data.createtime))
 
                 regsuccess();
                 dispatch(login());

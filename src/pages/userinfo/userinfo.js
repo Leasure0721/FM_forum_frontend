@@ -45,6 +45,7 @@ const Userinfo = () => {
     const dispatch = useDispatch();
 
     const handleUsernameChange = (newUsername) => {
+        console.log(username, newUsername)
         dispatch(setUsername(newUsername));
     }
 

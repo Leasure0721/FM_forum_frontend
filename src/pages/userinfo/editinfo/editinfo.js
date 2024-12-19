@@ -62,7 +62,7 @@ const EditInfo = ({ username, onUsernameChange, signature, onSignatureChange, ge
             <div style={{ fontFamily: 'PingFang SC', display: 'flex', justifyContent: 'space-between' }}>
                 <div>
                     {/* 用户名 */}
-                    <div style={{ display: 'flex', marginBottom: '30px' }}>
+                    {/* <div style={{ display: 'flex', marginBottom: '30px' }}>
                         <div style={{ fontSize: '16px', marginTop: '3px', letterSpacing: '4px' }}>
                             用户名:
                         </div>
@@ -80,7 +80,7 @@ const EditInfo = ({ username, onUsernameChange, signature, onSignatureChange, ge
                             }}
                             onBlur={handleUsernameChange} // 失去焦点时更新用户名
                         />
-                    </div>
+                    </div> */}
 
                     {/* 性别 */}
                     <div style={{ display: 'flex', marginBottom: '30px' }}>

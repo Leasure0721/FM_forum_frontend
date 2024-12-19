@@ -6,8 +6,8 @@ import { FireOutlined, HomeOutlined, HeartFilled, UserOutlined, MailOutlined, Pl
 import Logo from '../../assets/svg/logo.svg'
 import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '../../redux/authSlice';
-import { PersistGate } from 'redux-persist/integration/react';
-import { persistor } from '../../redux/store';
+import { setAvatar, setBirthday, setCreatetime, setGender, setUsername,setSignature } from '../../redux/userSlice';
+
 
 const { Header } = Layout;
 const { Search } = Input;
@@ -122,20 +122,15 @@ const MenuBar = () => {
      key: 'usersetting',
      label: '退出登录',
      onClick: () => {
-      dispatch(logout());  // 清除 Redux 中的登录状态
-      localStorage.clear(); // 清除浏览器的 localStorage
-
-      // 手动清除 redux-persist 的存储
-      persistor.purge();  // 清除 Redux Persist 存储
-
-      console.log("Logged out");
-
-      // 跳转到登录页面
-      navigate('/login');
-
-      // 可以考虑刷新页面，确保一切状态被清除
-      window.location.reload();  // 刷新页面，强制 Redux 从头加载
-    }
+       dispatch(logout());
+       dispatch(setUsername(''));
+       dispatch(setSignature(''));
+       dispatch(setGender(''));
+       dispatch(setAvatar(''));
+       dispatch(setBirthday(''));
+       dispatch(setCreatetime(''));
+       navigate('/login');
+     }
    }
  ]
 
