@@ -1,11 +1,25 @@
 .topicbtn {
     padding: 5px;
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(0, 0, 0, 0.4);
     color: #fff;
     font-size: 12px;
     cursor: pointer;
 
     &:hover {
-        background-color: rgba(0,0,0,0.5);
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+}
+
+:global {
+    .ant-select-dropdown .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+        color: rgba(255, 255, 255, 0.88);
+        font-weight: 600;
+        background-color: #ff6b6b80;
+        border: 1px solid #fff;
+    }
+
+    .ant-select-dropdown .ant-select-item-option-selected:not(.ant-select-item-option-disabled) .ant-select-item-option-state {
+        color: #fff;
+        font-size: 20px;
     }
 }
