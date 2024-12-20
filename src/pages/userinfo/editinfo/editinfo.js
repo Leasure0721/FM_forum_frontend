@@ -91,8 +91,8 @@ const EditInfo = ({ username, onUsernameChange, signature, onSignatureChange, ge
                             <Tooltip placement="bottom" title="男"> 
                                 <button 
                                     className={styles.genderbtn}
-                                    style={newGender === 'male' ? { backgroundColor: '#1890ff', color: '#fff' } : {}}
-                                    onClick={() => handleGenderChange('male')}
+                                    style={newGender === 'man' ? { backgroundColor: '#1890ff', color: '#fff' } : {}}
+                                    onClick={() => handleGenderChange('man')}
                                     >
                                         ♂
                                 </button>
