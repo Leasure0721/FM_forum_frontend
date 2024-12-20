@@ -118,8 +118,15 @@ const MenuBar = () => {
   }
 
  const usersetting = [
-   {
-     key: 'usersetting',
+  {
+    key: 'changeuser',
+    label: '切换账号',
+    onClick: () => {
+      navigate('/login');
+    }
+  }, 
+  {
+     key: 'logout',
      label: '退出登录',
      onClick: () => {
        dispatch(logout());
