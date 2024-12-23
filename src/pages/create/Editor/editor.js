@@ -16,15 +16,18 @@ const FMEditor = () => {
     },[])
 
     const toolbarConfig = {}
+    
 
     toolbarConfig.excludeKeys = [
         'fullScreen',
-        'group-video'
+        'group-video',
+        'insertImage'
     ]
 
     const editorConfig ={
         placeholder: '可以是一句话也可以是一长段文章，看你怎么写，点击开始创作',
     }
+
 
     useEffect(() => {
         return () => {

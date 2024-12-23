@@ -9,6 +9,7 @@ import Topic from "./topic/topic";
 import { useSelector } from "react-redux";
 import NoLogin from "../../components/nologin/nologin";
 import Dtp from "./dtp/dtp";
+import FMEditorv2 from "./Editor/ver2/v2_FMEditor";
 
 const Create = () => {
     const [image, setImage] = useState(null);
@@ -33,7 +34,8 @@ const Create = () => {
                     <div className={styles.createtitle}>
                         = 创作你的内容 =
                     </div>
-                    <FMEditor />
+                    {/* <FMEditor /> */}
+                    <FMEditorv2 />
                     <div className={styles.uploadcontainer}>
                         <div className={styles.uploadfirst}>
                             <div style={{ display: 'flex' }}>
