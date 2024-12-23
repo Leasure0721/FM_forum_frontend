@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { Select } from 'antd';
-import './index.less';
 
-const Topic = () => {
+const Dtp = () => {
     const [selectedTags, setSelectedTags] = useState([]);
     const [options, setOptions] = useState([
         { label: '情感故事', value: '情感故事' },
@@ -24,10 +23,10 @@ const Topic = () => {
         { label: '日常记录', value: '日常记录' },
         { label: '兴趣探索', value: '兴趣探索' },
     ]);
-    
+
 
     const handleChange = (value) => {
-        if (value.length <= 5) {
+        if (value.length <= 1) {
             setSelectedTags(value);
         }
         console.log(`selected: ${value}`);
@@ -52,16 +51,15 @@ const Topic = () => {
             <Select
                 mode="tags"
                 allowClear
-                style={{ width: '870px'}}
-                placeholder="请选择标签,也可以输入自己的标签"
+                style={{ width: '870px' }}
+                placeholder="选择要参与的话题，也可以输入自定义话题"
                 onChange={handleChange}
                 onBlur={handleBlur} // 失去焦点时触发保存操作
                 options={options}
                 value={selectedTags}
-                suffixIcon={<span>{selectedTags.length}/5</span>}
             />
         </div>
     );
-};
+}
 
-export default Topic;
+export default Dtp;

@@ -8,6 +8,7 @@ import Part from "./part/part";
 import Topic from "./topic/topic";
 import { useSelector } from "react-redux";
 import NoLogin from "../../components/nologin/nologin";
+import Dtp from "./dtp/dtp";
 
 const Create = () => {
     const [image, setImage] = useState(null);
@@ -36,7 +37,7 @@ const Create = () => {
                     <div className={styles.uploadcontainer}>
                         <div className={styles.uploadfirst}>
                             <div style={{ display: 'flex' }}>
-                                <div style={{ marginTop: '5px', marginRight: '10px' }}>
+                                <div  className= {styles.titlefont} style={{ marginTop: '5px'}}>
                                     标题
                                 </div>
                                 <div>
@@ -45,7 +46,7 @@ const Create = () => {
                             </div>
 
                             <div style={{ display: 'flex', width: '40%' }}>
-                                <div style={{ marginTop: '40px', marginRight: '10px' }}>
+                                <div className= {styles.titlefont} style={{ marginTop: '40px'}}>
                                     封面
                                 </div>
                                 <div className={styles.uploadcover}
@@ -72,26 +73,34 @@ const Create = () => {
                         </div>
 
                         <div style={{ display: 'flex', marginBottom: '5px', marginTop: '20px' }}>
-                            <div style={{ marginRight: '10px', marginTop: '25px' }}>
+                            <div className= {styles.titlefont} style={{marginTop: '25px' }}>
                                 摘要
                             </div>
                             <div>
-                                <Input.TextArea placeholder="请输入摘要" variant="filled" maxLength={200} showCount style={{ width: '870px', height: '70px' }} />
+                                <Input.TextArea placeholder="请输入摘要，这会显示在预览中" variant="filled" maxLength={200} showCount style={{ width: '870px', height: '70px' }} />
                             </div>
                         </div>
                         <div style={{ display: 'flex', marginBottom: '5px', marginTop: '20px' }}>
-                            <div style={{ marginRight: '10px', marginTop: '3px' }}>
+                            <div className= {styles.titlefont} style={{marginTop: '3px' }}>
                                 分区
                             </div>
                             <Part />
                         </div>
 
                         <div style={{ display: 'flex', marginBottom: '5px', marginTop: '20px' }}>
-                            <div style={{ marginRight: '10px', marginTop: '3px' }}>
-                                话题
+                            <div className= {styles.titlefont} style={{marginTop: '3px' }}>
+                                标签
                             </div>
                             <div>
                                <Topic />
+                            </div>
+                        </div>
+                        <div style={{ display: 'flex', marginBottom: '5px', marginTop: '20px' }}>
+                            <div style={{ marginRight: '34px', marginTop: '3px',letterSpacing: '0.5px' }}>
+                                参与话题
+                            </div>
+                            <div>
+                                <Dtp />
                             </div>
                         </div>
                         <div style={{ display: 'flex', justifyContent: 'flex-end' }}>

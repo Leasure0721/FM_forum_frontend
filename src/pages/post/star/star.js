@@ -18,8 +18,8 @@ const Star = () => {
 
     return (
         <div>
-            <div onClick={showModal}>
-                <StarFilled />  100 
+            <div onClick={showModal}  className={styles.star}>
+                <StarFilled/>  100 
             </div>
              <Modal
                 visible={isVisable}

@@ -28,7 +28,7 @@
 }
 
 .icon {
-    margin-right: 5px;
+    margin-right: 10px;
 }
 
 .writerInfo {
@@ -44,12 +44,18 @@
 
 .writerInfoContent {
     display: flex;
+    width: 100%;
 }
 
 .writerName {
     text-decoration: none;
     color: #979797;
     cursor: pointer;
+    font-size: 20px;
+    max-width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     
     &:hover {
         color: #ff6b6b;
@@ -63,27 +69,18 @@
 }
 
 .publishTime {
-    margin-left: 100px;
+    margin-left: 20px;
     color: #ccc;
 }
 
-.viewCount {
+.Count {
     margin-left: 20px;
 }
 
-.starCount {
-    margin-left: 10px;
-}
-
-.likeCount {
-    margin-left: 10px;
-}
 
 .partfooter {
     margin-top: 10px;
-    width: 250px;
     display: flex;
-    justify-content: space-between;
 }
 
 .partbtn {
@@ -179,7 +176,18 @@
     }
 }
 
+.topicbtn {
+    background-color: #cccccc93;
+    padding: 4px;
+    cursor: pointer;
+    color: #0000009a;
+    font-family: PingFang SC;
 
+    &:hover {
+        background-color: #ccc;
+        color: #000000e5;
+    }
+}
 
 :global {
     :focus-visible {
