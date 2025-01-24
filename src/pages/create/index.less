@@ -1,24 +1,24 @@
 .createpage {
-    display: flex; // 使用 Flexbox
-    justify-content: center; // 水平居中
-    align-items: center; // 垂直居中
-    opacity: 0;
-    animation: fadeIn 1s forwards;  // 使用动画
-    color:#FFF;
-    flex-direction: column; // 垂直排列
-  
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
+  display: flex; // 使用 Flexbox
+  justify-content: center; // 水平居中
+  align-items: center; // 垂直居中
+  opacity: 0;
+  animation: fadeIn 1s forwards; // 使用动画
+  color: #fff;
+  flex-direction: column; // 垂直排列
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
     }
+    to {
+      opacity: 1;
+    }
+  }
 }
 
 .createtitle {
-  background: #FF6B6B;
+  background: #ff6b6b;
   font-size: 24px;
   margin-bottom: 20px;
   font-family: PingFang SC;
@@ -26,16 +26,15 @@
   border-radius: 5px;
 }
 
-
 .uploadcontainer {
   width: 1350px;
   padding: 10px;
   background: #fff;
   color: #666;
   border-radius: 5px;
-  border: 2px solid #FF6B6B;
+  border: 2px solid #ff6b6b;
   margin-bottom: 20px;
-  padding-left:40px;
+  padding-left: 40px;
 }
 
 .uploadfirst {
@@ -46,18 +45,18 @@
 }
 
 .uploadcover {
-    color: #0000004f;
-    width: 178px;
-    height: 100px;
-    background: rgba(0,0,0,0.04);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
+  color: #0000004f;
+  width: 178px;
+  height: 100px;
+  background: rgba(0, 0, 0, 0.04);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 
-    &:hover {
-      background-color: rgba(0,0,0,0.06);
-    }
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.06);
+  }
 }
 
 .titlefont {
@@ -66,12 +65,35 @@
   padding-left: 3x;
 }
 
-
 :global {
-  .ant-input-filled:focus, 
+  .ant-input-filled:focus,
   .ant-input-filled:focus-within {
     outline: 0;
-    border-color: #FF6B6B;
+    border-color: #ff6b6b;
     background-color: #ffffff;
+  }
+
+  .ant-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+    color: #ff6b6b;
+    text-shadow: 0 0 0.25px currentcolor;
+  }
+
+  .ant-tabs .ant-tabs-tab-btn:focus:not(:focus-visible),
+  .ant-tabs .ant-tabs-tab-remove:focus:not(:focus-visible),
+  .ant-tabs .ant-tabs-tab-btn:active,
+  .ant-tabs .ant-tabs-tab-remove:active {
+    color: #ff6b6b;
+  }
+
+  .ant-tabs .ant-tabs-tab:hover {
+    color: #ff6b6b;
+  }
+
+  .ant-tabs-ink-bar {
+    background-color: #ff6b6b !important;
+  }
+
+  .ant-tabs .ant-tabs-tab {
+    color: #ccc !important;
   }
 }

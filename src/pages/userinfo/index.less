@@ -81,6 +81,8 @@
 .datacontainer {
   width: 500px;
   height: 330px;
+  position: sticky;
+  top: 80px;
 }
 
 .dataheader {
@@ -126,5 +128,29 @@
   border: 2px solid #ff6b6b;
 }
 
+.antimagemask {
+  border-radius: 50% !important; /* 圆形蒙版 */
+  width: 120px !important; /* 确保蒙版大小和图片一致 */
+  height: 120px !important; /* 确保蒙版大小和图片一致 */
+  overflow: hidden; /* 防止超出圆形 */
+}
 
+.HSdiv {
+  background: #666;
+  padding: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+
+  &:hover {
+    background: #999;
+    font-size: 18px;
+  }
+}
+
+
+// :global {
+//   .ant-image .ant-image-mask {
+//     border-radius: 50% !important;
+//   }
+// }
 

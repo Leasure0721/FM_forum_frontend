@@ -99,7 +99,7 @@ const Post = () => {
                     </div>
                 </div>
                 <div className={styles.content}>
-                    1212112
+                    这是文章内容
                 </div>
                 <div className={styles.footer}>
                     <div className={styles.footerleft}>

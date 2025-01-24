@@ -46,21 +46,6 @@ const MenuBar = () => {
     {
       label: (
         <span>
-          <FireOutlined style={{
-            marginRight: '5px',
-            fontSize: '15px',
-            marginLeft: '0',
-            transition: 'none'
-          }} />
-          最近热门
-        </span>
-      ),
-      key: 'hot',
-      onClick: () => handleMenuClick('/hot'),
-    },
-    {
-      label: (
-        <span>
           <HeartFilled style={{
             marginRight: '5px',
             fontSize: '15px',

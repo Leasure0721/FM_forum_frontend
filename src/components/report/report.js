@@ -69,7 +69,7 @@ const Report = () => {
             </a>
 
             <Modal
-                title={<div style={{ fontFamily: 'PingFang SC', fontSize: '20px' }}>举报反馈</div>}
+                title={<div style={{ userSelect: 'none',fontFamily: 'PingFang SC', fontSize: '20px' }}>举报反馈</div>}
                 visible={isModalVisible}
                 onOk={handleOk}
                 onCancel={handleCancel}

@@ -26,6 +26,8 @@ const Star = () => {
                 onOk={handleOk}
                 onCancel={handleCancel}
                 className={styles.modal}
+                okText="确定"
+                cancelText="取消"
              >
                 <div className={styles.title}>
                     添加收藏夹

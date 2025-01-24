@@ -1,0 +1,80 @@
+.Page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "PingFang SC";
+  opacity: 0;
+  animation: fadeIn 1s forwards; // 使用动画
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 1400px;
+  min-height: 650px;
+  border: 1px solid #ff6b6b;
+  border-radius: 10px;
+  background-color: #fff;
+  padding: 16px;
+}
+
+.starTitle {
+  font-size: 20px;
+  font-weight: 600;
+  border-bottom: 1px solid #ff6b6b;
+  padding-bottom: 5px;
+}
+
+.starContent {
+  margin-top: 5px;
+  height: 600px;
+  display: flex;
+}
+
+.starSider {
+  width: 15%;
+  overflow-y: scroll;
+}
+
+.starContentRight {
+  width: 85%;
+  padding: 10px;
+  overflow-y: scroll;
+}
+
+.starFolder {
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+
+  &:hover {
+    background:#eeeeee;
+  }
+}
+
+.inputField {
+  width: 100%;
+  height: 40px;
+  border-radius: 0!important;
+}
+
+.starFolderClicked {
+  background:#ff6b6b !important;
+  color: #fff;
+}
+
+:global {
+  .ant-input-outlined:focus, 
+  .ant-input-outlined:focus-within{
+    box-shadow: none;
+  }
+}

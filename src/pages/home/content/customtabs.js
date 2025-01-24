@@ -2,6 +2,9 @@ import React from 'react';
 import { Tabs } from 'antd'; // 假设您使用的是 Ant Design 的 Tabs 组件
 import styles from './index.less'
 import { CustomerServiceOutlined, TeamOutlined, VideoCameraOutlined, CrownOutlined, BookOutlined, UsbOutlined, CarOutlined, GiftOutlined } from '@ant-design/icons';
+import TAIpre from '../../../components/TAIpre/taipre';
+import VideoPre from '../../../components/videopre/VideoPre';
+import ArticalPre from '../../../components/articalpre/articalpre';
 
 const sorteditems = [
   {
@@ -102,8 +105,10 @@ const sorteditems = [
       </div>
     ),
     children: (
-        <div style={{background:'#545454',padding:'10px',color:'#fff'}}>
-            山友日常
+        <div >
+            <TAIpre />
+            <VideoPre />
+            <ArticalPre />
         </div>
     )
   },

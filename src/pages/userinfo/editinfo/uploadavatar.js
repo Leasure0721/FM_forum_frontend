@@ -14,12 +14,25 @@ const UploadAvatar = ({ onAvatarChange, avatar }) => {
                 return;
             }
 
+            // 创建一个 Image 对象来检查图片的尺寸
+            const img = new Image();
             const reader = new FileReader();
+
             reader.onload = () => {
-                const baseImage = reader.result;
-                onAvatarChange(baseImage);
-                setImage(baseImage); // 读取图片 base64 编码
+                img.onload = () => {
+                    // 检查图片的宽高是否小于120px
+                    if (img.width < 120 || img.height < 120) {
+                        message.error('图片尺寸过小,请重新选择！');
+                    } else {
+                        // 图片尺寸合格，读取图片的 base64 编码
+                        const baseImage = reader.result;
+                        onAvatarChange(baseImage);
+                        setImage(baseImage); // 更新图片
+                    }
+                };
+                img.src = reader.result; // 设置图片源
             };
+
             reader.readAsDataURL(file); // 读取文件内容
         }
     };
